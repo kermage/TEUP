@@ -5,14 +5,108 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>TEUP</title>
 		<link href="https://unpkg.com/modern-normalize" rel="stylesheet" />
+		<style>
+			.teup-showcase {
+				z-index: 5;
+				border: 3px dashed currentColor;
+				/* box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.4); */
+			}
+		</style>
 		<script type="module">
 			import TEUP from '/src/index.ts';
 
-			new TEUP();
+			const myInstance = new TEUP('teup-showcase');
+
+			// myInstance.onChange((element) => console.log(element));
+			myInstance.start();
 		</script>
+		<!-- <script src="/browser.js" defer></script> -->
 	</head>
 
 	<body>
-		<h1>TEUP, world!</h1>
+		<header>
+			<h1>TEUP, world!</h1>
+		</header>
+
+		<nav class="nav" id="nav">
+			<a href="#home">Home</a>
+			<a href="#nav-item-1">Item 1</a>
+			<a href="#nav-item-2">Item 2</a>
+			<a href="#nav-item-3">Item 3</a>
+		</nav>
+
+		<main>
+			<section>
+				<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+				<p>
+					Quis, vitae sequi hic necessitatibus harum iure delectus atque. Velit tenetur asperiores perspiciatis a rerum
+					incidunt, obcaecati ad dolorum ut minima vitae quam quibusdam minus sequi nemo facere atque sit!
+				</p>
+				<p>
+					Cum iste ducimus voluptate provident hic velit, perferendis cumque perspiciatis? Minima odio culpa dicta neque
+					et temporibus eius vel ad sapiente, ea facere consequuntur doloremque aliquid, inventore velit in voluptate!
+				</p>
+			</section>
+
+			<section>
+				<h3>Obcaecati nesciunt tempore facere dolore ipsa?</h3>
+				<form action="#">
+					<label>
+						First name:
+						<input type="text" name="firstName" value="Juan" />
+					</label>
+					<label>
+						Last name:
+						<input type="text" name="lastName" value="Dela Cruz" />
+					</label>
+					<label>
+						Email:
+						<input type="email" name="email" value="j_tamad@example.com" />
+					</label>
+
+					<input type="submit" value="Submit" />
+				</form>
+			</section>
+
+			<section>
+				<h4>Deleniti officiis voluptatum aliquam atque eligendi tempore nisi!</h4>
+				<table border="1" cellspacing="0" cellpadding="5">
+					<tr>
+						<td>Row 1, Column 1</td>
+						<td>Row 1, Column 2</td>
+						<td>Row 1, Column 3</td>
+					</tr>
+					<tr>
+						<td>Row 2, Column 1</td>
+						<td>Row 2, Column 2</td>
+						<td>Row 2, Column 3</td>
+					</tr>
+				</table>
+			</section>
+
+			<section>
+				<h5>Exercitationem ex velit facilis pariatur...</h5>
+
+				<ol>
+					<li>Ordered</li>
+					<li>Ordered</li>
+					<li>Ordered</li>
+				</ol>
+
+				<ul>
+					<li>This</li>
+					<li>That</li>
+				</ul>
+			</section>
+		</main>
+
+		<aside>
+			<h6>Ullam mollitia iure: aperiam distinctio, delectus tempore, minima enim, placeat quia.</h6>
+			<img src="https://via.placeholder.com/800x600" alt="" />
+		</aside>
+
+		<footer>
+			<small>&copy; 2024 &mdash; GAFT. All Rights Reserved.</small>
+		</footer>
 	</body>
 </html>

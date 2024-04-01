@@ -17,20 +17,29 @@
     "url": "https://github.com/kermage/TEUP.git"
   },
   "type": "module",
+  "main": "dist/module.js",
+  "module": "dist/module.js",
+  "types": "dist/module.d.ts",
+  "browser": "dist/browser.js",
+  "unpkg": "dist/browser.js",
   "files": [
-    "dist/"
+    "dist/browser.js",
+    "dist/module.js",
+    "dist/module.d.ts"
   ],
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.12.2",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3",
-    "vite": "^5.2.7"
+    "vite": "^5.2.7",
+    "vite-plugin-dts": "^3.8.1"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "build:module": "tsc && vite build",
+    "build:browser": "BROWSER=true vite build",
+    "build": "pnpm build:module && pnpm build:browser",
+    "preview": "vite build -c vite.preview.ts && vite preview",
+    "prepublishOnly": "pnpm build"
   }
 }

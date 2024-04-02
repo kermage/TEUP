@@ -14,12 +14,17 @@ export function asPixels(domRect: DOMRect) {
 export function createElement<T extends keyof HTMLElementTagNameMap>(
 	tagName: T,
 	styles?: Partial<CSSStyleDeclaration>,
+	className?: string,
 ): HTMLElementTagNameMap[T] {
 	const container = document.createElement(tagName);
 
 	for (const key in styles) {
 		// @ts-ignore
 		container.style[key] = styles[key];
+	}
+
+	if (className) {
+		container.classList.add(className);
 	}
 
 	return container;

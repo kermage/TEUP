@@ -24,8 +24,7 @@ export default class TEUP {
 	constructor(className: string) {
 		const { width, height } = asPixels(document.body.getBoundingClientRect());
 
-		this.box = createElement('div', { ...STYLE, width, height });
-		this.box.className = className;
+		this.box = createElement('div', { ...STYLE, width, height }, className);
 		this.listeners = {
 			mouseMoveHandler: this.handleMouseMove.bind(this),
 			scrollResizeHandler: () => {
